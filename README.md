@@ -25,7 +25,8 @@ This is a responsive Cleaning Service Landing Page built using **HTML** and **CS
 
 
 ## Screenshot
-![Uploading screencapture-cleaning-service-iota-vercel-app-2025-02-23-18_11_30.png…](https://github.com/user-attachments/assets/140e7b52-6183-4d0e-b809-e4b578f6484e)
+![Uploading screencapture-cleaning-service-iota-vercel-app-2025-02-23-18_11_30.png…]()
+
 
 
 ## License
