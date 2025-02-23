@@ -10,11 +10,96 @@
     <link rel="stylesheet" href="style.css">
     <!-- Favicon -->
     <link rel="icon" href="./12.png" type="image/png">   
+
+      <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<style>
+/* Main Navigation Styles */
+.topnav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.topnav ul li {
+    margin-right: 20px;
+}
+
+.topnav ul li a {
+    color: rgb(77, 88, 97);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Hamburger Icon Styles */
+.icon {
+    display: none; /* Hidden by default */
+    font-size: 14px;
+    color: rgb(30, 174, 252);
+    cursor: pointer;
+    font-weight: 300;  /* Decrease icon weight */
+}
+
+.icon i {
+    font-size: 14px;
+}
+
+/* Responsive Styles for Hamburger Menu */
+@media screen and (max-width: 768px) {
+    .topnav ul {
+        display: none; /* Hide the main menu on smaller screens */
+        flex-direction: column;
+        width: 100%;
+        position: relative; 
+    }
+
+    .topnav ul li {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .icon {
+        display: block; /* Show the hamburger icon */
+    }
+
+    /* When the hamburger menu is active, show the links */
+    .topnav.responsive ul {
+        display: flex;
+    }
+
+    /* Initially hide the close icon */
+    #closeIcon {
+        display: none;
+        position: absolute;
+        top: 10px; /* Adjust as needed */
+        right: 10px; /* Adjust as needed */
+        font-weight: 300;
+    }
+
+    /* Show close icon and hide hamburger icon when menu is open */
+    .topnav.responsive #hamburgerIcon {
+        display: none;
+    }
+
+    .topnav.responsive #closeIcon {
+        display: block;
+    }
+}
+</style>
+
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="topnav">
             <a href="#home"><img src="./12.png" alt="Clean-Partner Logo"></a>
+            <div id="myLinks"></div>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
@@ -23,6 +108,12 @@
                 <li><a href="#team">Team</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            </div>
+               <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars" id="hamburgerIcon"></i>
+                     <!-- Close Button -->
+                   <i class="fa fa-times" id="closeIcon" style="display: none;"></i>
+                </a>
         </nav>
     </header>
     <!-- Hero Section -->
@@ -245,23 +336,55 @@
     <div class="footer-content">
         <p>&copy; 2023 Clean-Partner</p>
         <div class="contact-info">
-            <p><i class="fas fa-map-marker-alt"></i> 123 Main St, City, State 12345</p>
-            <p><i class="fas fa-phone"></i> Phone: (123) 456-7890</p>
-            <p><i class="fas fa-envelope"></i> Email: info@clean-partner.com</p>
+            <p><i class="bi bi-geo-alt"></i> 123 Main St, City, State 12345</p>
+            <p><i class="bi bi-phone"></i> Phone: (123) 456-7890</p>
+            <p><i class="bi bi-envelope"></i> Email: info@clean-partner.com</p>
         </div>
         <div class="social-icons">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i>
-                <img src="./fb.png" alt="Facebook">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i>
+               
             </a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i>
-                <img src="./x.png" alt="Twitter">
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i>
+               
             </a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i>
-                <img src="./insta.png" alt="Instagram">
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i>
+                
             </a>
         </div>
     </div>
 </footer>
+
+<script>
+function myFunction() {
+    var x = document.querySelector(".topnav");
+    var hamburgerIcon = document.getElementById("hamburgerIcon");
+    var closeIcon = document.getElementById("closeIcon");
+
+    if (x.classList.contains("responsive")) {
+        // If the menu is already open, close it
+        x.classList.remove("responsive");
+        hamburgerIcon.style.display = "block"; // Show hamburger icon
+        closeIcon.style.display = "none";      // Hide close icon
+    } else {
+        // If the menu is closed, open it
+        x.classList.add("responsive");
+        hamburgerIcon.style.display = "none";  // Hide hamburger icon
+        closeIcon.style.display = "block";     // Show close icon
+    }
+}
+
+// Add event listeners to all menu links to close the menu when a link is clicked
+document.querySelectorAll(".topnav ul li a").forEach(link => {
+    link.addEventListener("click", () => {
+        var x = document.querySelector(".topnav");
+        var hamburgerIcon = document.getElementById("hamburgerIcon");
+        var closeIcon = document.getElementById("closeIcon");
+
+        x.classList.remove("responsive");
+        hamburgerIcon.style.display = "block";
+        closeIcon.style.display = "none";
+    });
+});</script>
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>

@@ -696,3 +696,110 @@
          grid-template-columns: repeat(1, 1fr);
      }
  }
+
+
+
+
+
+
+
+ /* Responsive Hero */
+ @media screen and (max-width: 768px) {
+     .hero img {
+         height: 300px;
+     }
+
+     .hero-text {
+         left: 5%;
+         text-align: center;
+     }
+
+     .hero-text h1 {
+         font-size: 2rem;
+     }
+
+     .hero-text h2 {
+         font-size: 1.3rem;
+     }
+
+     .hero-text p {
+         font-size: 0.9rem;
+     }
+ }
+
+ /* Responsive About */
+ @media screen and (max-width: 768px) {
+     #about {
+         flex-direction: column;
+         text-align: center;
+     }
+
+     .about-content,
+     .about-image {
+         max-width: 100%;
+     }
+
+     .about-image {
+         margin-top: 1.5rem;
+         text-align: center;
+     }
+ }
+
+
+ /* Responsive Services */
+ @media screen and (max-width: 768px) {
+     .services-grid {
+         grid-template-columns: repeat(2, 1fr);
+     }
+ }
+
+ @media screen and (max-width: 480px) {
+     .services-grid {
+         grid-template-columns: repeat(1, 1fr);
+     }
+ }
+
+
+ /* Responsive Pricing */
+ @media screen and (max-width: 768px) {
+     #prices {
+         padding: 4rem 4%;
+     }
+
+     .pricing-cards {
+         grid-template-columns: repeat(2, 1fr);
+     }
+ }
+
+ @media screen and (max-width: 480px) {
+     .pricing-cards {
+         grid-template-columns: repeat(1, 1fr);
+     }
+ }
+
+
+ /* Responsive Team */
+ @media screen and (max-width: 768px) {
+     .team-grid {
+         grid-template-columns: repeat(2, 1fr);
+     }
+ }
+
+ @media screen and (max-width: 480px) {
+     .team-grid {
+         grid-template-columns: repeat(1, 1fr);
+     }
+ }
+
+
+
+ /* Responsive Footer */
+ @media screen and (max-width: 768px) {
+     footer p {
+         font-size: 0.9rem;
+     }
+
+     .social-icons a {
+         font-size: 1.3rem;
+     }
+ }
